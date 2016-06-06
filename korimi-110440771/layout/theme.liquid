@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		{% if template == 'index' %}
+			<title>{{ shop.name }}</title>
+		{% elsif template == '404' %}
+			<title>Página no encontrada | {{ shop.name }}</title>
+		{% elsif template == 'collection' %}
+			<title>{{ page_title }}{% if current_tags %} &ndash; {{ current_tags | join: ', ' }}{% endif %}{% if current_page != 1 %} &ndash; Page {{ current_page }}{% endif %}{% unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless %} </title>
+		{% else %}
+			<title>{{ page_title }} | {{ shop.name }}</title>
+		{% endif %} 
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+		{% if page_description != '' %}
+			<meta name="description" content="{{ page_description }}" />
+		{% endif %}
+
+		{% include 'head-css' %}
+		{% include 'head-js' %}
+		
+		{{ content_for_header }}
+
+	</head>
+
+	<body class="{{ template | replace: '.', ' ' | truncatewords: 1, '' }}" id="{{ page_title | handle }}">
+
+		{{ content_for_layout }}
+		
+	</body>
+</html>

@@ -1,0 +1,10 @@
+{% comment %}templates/collection.liquid{% endcomment %}
+{% paginate collection.products by 12 %}
+	{% for product in collection.products  %}
+
+		<a href="{{ product.url }}"><h3>{{ product.title }} | {{ product.price }}</h3></a>
+		<p><br></p>
+		
+	{% endfor %}
+	{{ paginate | default_pagination }}
+{% endpaginate %}
