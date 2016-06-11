@@ -1,1 +1,88 @@
 {% comment %}templates/page.liquid{% endcomment %}
+
+{% capture pagina %}{{ page.title }}{% endcapture %}
+
+
+{% if page.title == 'About' %}
+
+	<div class="contenedor-general">
+
+		<div class="contenedor">
+
+			<div class="contenedor-acerca">
+
+				{{ page.content }}
+
+			</div>
+
+			<h1>Raices</h1>
+
+			<div class="contenedor-faq"></div>
+
+		</div>
+
+	</div>
+
+	{{ pages.raices.content }}
+
+{% elsif page.title == 'FAQ' %}
+
+	<div class="contenedor-general">
+
+		<div class="contenedor">
+
+			<h1>Preguntas frecuentes</h1>
+
+			<div class="contenedor-faq"></div>
+
+		</div>
+
+	</div>
+
+	{{ page.content }}
+
+{% elsif page.title == "Lookbook" %}	
+
+	{{ page.content }}
+
+	<div class="contenedor-lookbook">
+
+		<div class="lookbook-cerrar" style="background: url({{ 'ice9-image-fondo-cerrar.svg' | asset_url }}) no-repeat center center;">
+
+			<img src="{{ 'ice9-image-cerrar-icon-light.svg' | asset_url }}" alt="">
+
+		</div>
+
+		<div class="lookbook-nav lookbook-prev" style="background: url({{ 'ice9-image-fondo-prev.svg' | asset_url }}) no-repeat center center;">
+
+			<img src="{{ 'ice9-image-prev-icon.png' | asset_url }}" alt="">
+
+		</div>
+
+		<div class="lookbook-nav lookbook-next" style="background: url({{ 'ice9-image-fondo-next.svg' | asset_url }}) no-repeat center center;">
+
+			<img src="{{ 'ice9-image-next-icon.png' | asset_url }}" alt="">
+
+		</div>
+
+		<div class="lookbook-slides" data-cycle-slides="> div" data-cycle-fx="scrollHorz" data-cycle-paused="true" data-cycle-prev=".lookbook-prev" data-cycle-next=".lookbook-next"></div>	
+
+	</div>
+
+{% else %}
+
+	<div class="contenedor-general">
+
+		<div class="contenedor">
+
+			<div class="contenedor-acerca">
+
+				{{ page.content }}
+
+			</div>
+
+		</div>
+
+	</div>
+
+{% endif %}

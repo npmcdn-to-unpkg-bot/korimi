@@ -1,0 +1,5 @@
+development:  
+  password: "90c614c1376eb12c22d426bd58ad4f07"
+  store: "korimi.myshopify.com"
+  bucket_size: 40
+  refill_rate: 2

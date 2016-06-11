@@ -1,0 +1,79 @@
+<footer>	
+
+	<div class="footer-izq">
+
+		<div class="footer-atencion">
+
+			{% for link in linklists.footer.links %}
+
+				<a href="{{ link.url }}">{{ link.title }}</a>
+				
+			{% endfor %}
+
+			<a href="mailto:hola@korimikids.com">hola@korimikids.com</a>
+
+		</div>
+
+		<div class="footer-legal">
+
+			<a href="#" class="arcoiris-img"><img src="{{ 'korimi-arcoiris.svg' | asset_url}}" alt=""></a>
+
+			<div class="legal-aviso">
+
+				{% for link in linklists.footer-below.links  %}
+
+					<a href="{{ link.url }}">{{ link.title }}</a>
+
+				{% endfor %}
+
+				<span>©2016</span>
+
+			</div>
+
+			<div class="footer-social">
+
+				{% if settings.social-check-fb %}
+
+					<a href="{{ settings.social-url-fb }}" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+
+				{% endif %}
+
+				{% if settings.social-check-tw %}
+
+					<a href="{{ settings.social-url-tw }}" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+
+				{% endif %}
+
+				{% if settings.social-check-pt %}
+
+					<a href="{{ settings.social-url-pt }}" target="_blank"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
+
+				{% endif %}
+
+				{% if settings.social-check-yt %}
+
+					<a href="{{ settings.social-url-yt }}" target="_blank"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+
+				{% endif %}
+
+				{% if settings.social-check-in %}
+
+					<a href="{{ settings.social-url-in }}" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+
+				{% endif %}
+
+			</div>
+
+		</div>
+
+	</div>
+
+	<div class="footer-der">
+
+		<p>10% OFF al suscribirte</p>
+
+		<span>¡Lo quiero!</span>
+
+	</div>
+
+</footer>

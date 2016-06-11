@@ -1,1 +1,21 @@
 {% comment %}templates/article.liquid{% endcomment %}
+
+<div class="contenedor-general">
+
+	<div class="contenedor">
+
+		<div class="fecha">{{ article.published_at | date: "%B %Y" }}</div>
+
+		<h1>{{ article.title }}</h1>
+
+		<div class="credito">escrito por: {{ article.author }}</div>
+
+		<div class="contenedor-blog">
+
+			{{ article.content }}
+
+		</div>
+
+	</div>
+
+</div>

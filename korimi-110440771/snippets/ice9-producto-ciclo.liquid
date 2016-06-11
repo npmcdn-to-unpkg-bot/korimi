@@ -1,0 +1,62 @@
+{% capture collection_handle %}
+
+	{{ ice9-producto-ciclo | handleize }}
+
+{% endcapture %}
+
+{% capture url %}
+
+	{% if collection_handle != "" %}
+
+		/collections/{{ ice9-producto-ciclo }}{{ product.url }}
+
+	{% else %}
+
+		{{ product.url }}
+
+	{% endif %}
+
+{% endcapture %}
+
+
+{% for variant in product.variants %}
+
+	<div class="grid-item">
+
+		<a href="{{ url }}">
+
+			<img src="{{ product.featured_image | product_img_url: 'large' }}" alt="">
+
+			{% for image in product.images %}
+
+				{% unless product.featured_image == image.src %}
+
+					<img src="{{ image | img_url: 'large' }}" alt="" class="grid-item-hover">
+
+				{% endunless %}
+
+			{% endfor %}
+
+		</a>
+
+		<div class="item-text">
+
+			<div class="text-descripcion">
+
+				<h3>{{ product.title }}</h3>
+
+				<p>{{variant.title}}</p>
+
+			</div>
+
+			<div class="text-precio">
+
+				<p>{{ product.price | money }}</p>
+
+			</div>
+
+		</div>
+
+	</div>
+
+{% endfor %}

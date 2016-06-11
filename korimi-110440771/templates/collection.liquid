@@ -1,10 +1,53 @@
 {% comment %}templates/collection.liquid{% endcomment %}
-{% paginate collection.products by 12 %}
-	{% for product in collection.products  %}
 
-		<a href="{{ product.url }}"><h3>{{ product.title }} | {{ product.price }}</h3></a>
-		<p><br></p>
-		
-	{% endfor %}
-	{{ paginate | default_pagination }}
-{% endpaginate %}
+<div class="contenedor-general">
+
+	<div class="contenedor">
+
+		{% if collection.image %}
+
+			<div class="colecciones-hero">
+
+				<div class="hero-boton">
+
+					<img src="{{ collection | img_url: 'grande' }}" alt="">
+
+					<a href="#">{{ collection.title }}</a>
+
+				</div>
+
+				<p>{{ collection.description }}</p>
+
+			</div>
+
+		{% else %}
+
+			<div class="colecciones-simple-hero">
+
+				<a href="">{{ collection.title }}</a>
+
+				<p>{{ collection.description }}</p>
+
+			</div>
+
+		{% endif %}
+
+		{% include 'ice9-breadcrumbs' %}
+
+		<div class="colecciones-grid">
+
+			{% paginate.collection.products %}
+
+				{% for product in collection.products %}
+
+					{% include 'ice9-producto-ciclo' with collection.handle %}
+
+				{% endfor %}
+
+			{% endpaginate %}
+
+		</div>
+
+	</div>
+
+</div>

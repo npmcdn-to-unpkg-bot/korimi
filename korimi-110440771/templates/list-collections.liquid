@@ -1,1 +1,151 @@
 {% comment %}templates/list-collections.liquid{% endcomment %}
+
+{% for collection in collections %}
+
+	{% if collection.title == 'Vests' %}
+
+		{% capture chalecos %}{{ collection.title }}{% endcapture %}
+
+		{% if collection.image %}
+
+			{% capture chalecos_img %}{{ collection | img_url: '2048x2048' }}{% endcapture %}
+
+		{% else %}
+
+			{% capture chalecos_img %}http://placehold.it/434x550{% endcapture %}
+
+		{% endif %}
+
+		{% capture chalecos_url %}{{ collection.url }}{% endcapture %}
+
+	{% elsif collection.title == 'Cushions' %}
+
+		{% capture cojines %}{{ collection.title }}{% endcapture %}
+
+		{% if collection.image %}
+
+			{% capture cojines_img %}{{ collection | img_url: '2048x2048' }}{% endcapture %}
+
+		{% else %}
+
+			{% capture cojines_img %}http://placehold.it/880x550{% endcapture %}
+
+		{% endif %}
+
+		{% capture cojines_url %}{{ collection.url }}{% endcapture %}
+
+	{% elsif collection.title == 'Pennants' %}
+
+		{% capture banderines %}{{ collection.title }}{% endcapture %}
+
+		{% if collection.image %}
+
+			{% capture banderines_img %}{{ collection | img_url: '2048x2048' }}{% endcapture %}
+
+		{% else %}
+
+			{% capture banderines_img %}http://placehold.it/1366x550{% endcapture %}
+
+		{% endif %}
+
+		{% capture banderines_url %}{{ collection.url }}{% endcapture %}
+
+	{% elsif collection.title == 'Throws' %}
+
+		{% capture mantas %}{{ collection.title }}{% endcapture %}
+
+		{% if collection.image %}
+
+			{% capture mantas_img %}{{ collection | img_url: '2048x2048' }}{% endcapture %}
+
+		{% else %}
+
+			{% capture mantas_img %}http://placehold.it/440x550{% endcapture %}
+
+		{% endif %}
+
+		{% capture mantas_url %}{{ collection.url }}{% endcapture %}
+
+	{% elsif collection.title == 'Shoes' %}
+
+		{% capture zapatos %}{{ collection.title }}{% endcapture %}
+
+		{% if collection.image %}
+
+			{% capture zapatos_img %}{{ collection | img_url: '2048x2048' }}{% endcapture %}
+
+		{% else %}
+
+			{% capture zapatos_img %}http://placehold.it/440x550{% endcapture %}
+
+		{% endif %}
+
+		{% capture zapatos_url %}{{ collection.url }}{% endcapture %}
+
+	{% elsif collection.title == 'Bibs' %}
+
+		{% capture baberos %}{{ collection.title }}{% endcapture %}
+
+		{% if collection.image %}
+
+			{% capture baberos_img %}{{ collection | img_url: '2048x2048' }}{% endcapture %}
+
+		{% else %}
+
+			{% capture baberos_img %}http://placehold.it/440x550{% endcapture %}
+
+		{% endif %}
+
+		{% capture baberos_url %}{{ collection.url }}{% endcapture %}
+
+	{% elsif collection.title == 'Playsuits' %}
+
+		{% capture panialeros %}{{ collection.title }}{% endcapture %}
+
+		{% if collection.image %}
+
+			{% capture panialeros_img %}{{ collection | img_url: '2048x2048' }}{% endcapture %}
+
+		{% else %}
+
+			{% capture panialeros_img %}http://placehold.it/1366x550{% endcapture %}
+
+		{% endif %}
+
+		{% capture panialeros_url %}{{ collection.url }}{% endcapture %}
+		
+	{% endif %}
+
+{% endfor %}
+
+
+
+<div class="contenedor-general">
+
+	<div class="contenedor">
+
+		<div class="contenedor-coleccion">
+
+			<div class="coleccion-cuadro cuadro-chalecos"><a href="{{ chalecos_url }}"><img src="{{ chalecos_img }}" alt=""><span>{{ chalecos }}</span></a></div>
+
+			<div class="coleccion-cuadro cuadro-cojines"><a href="{{ cojines_url }}"><img src="{{ cojines_img }}" alt=""><span>{{ cojines }}</span></a></div>
+
+			<div class="coleccion-cuadro cuadro-banderines"><a href="{{ banderines_url }}"><img src="{{ banderines_img }}" alt=""><span>{{ banderines }}</span></a></div>
+
+			<div class="cuadro-tres">
+
+				<div class="coleccion-cuadro cuadro-mantas"><a href="{{ mantas_url }}"><img src="{{ mantas_img }}" alt=""><span>{{ mantas }}</span></a></div>
+
+				<div class="coleccion-cuadro cuadro-zapatos"><a href="{{ zapatos_url }}"><img src="{{ zapatos_img }}" alt=""><span>{{ zapatos }}</span></a></div>
+
+				<div class="coleccion-cuadro cuadro-baberos"><a href="{{ baberos_url }}"><img src="{{ baberos_img }}" alt=""><span>{{ baberos }}</span></a></div>
+
+			</div>
+
+			<div class="coleccion-cuadro cuadro-panialeros"><a href="{{ panialeros_url }}"><img src="{{ panialeros_img }}" alt=""><span>{{ panialeros }}</span></a></div>
+
+		</div>
+
+	</div>
+
+</div>

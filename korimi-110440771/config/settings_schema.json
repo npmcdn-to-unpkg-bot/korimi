@@ -1,18 +1,633 @@
 [
-  {
-    "name": "Estilos Generales",
-    "settings": [
-      {
-        "type": "header",
-        "content": "Colores"
-      },
-      {
-        "type": "color",
-        "id": "color_link",
-        "label": "Color para enlaces",
-        "default": "#FFF",
-        "info": "Info placeholder"
-      }
-    ]
-  }
+	{
+		"name": "Estilos Generales",
+		"settings":[
+
+			{
+				"type": "header",
+				"content": "Colores"
+			},
+			{
+				"type": "color",
+				"id": "color_link",
+				"label": "Color para enlaces",
+				"default": "#FFF",
+				"info": "Info placeholder"
+			}
+
+		]
+	},
+	{
+		"name": "Logotipo",
+		"settings":[
+			{
+				"type": "image",
+				"id": "korimi-logo.png",
+				"max-width": 170,
+				"label": "Logotipo",
+				"info": "Agrega una imagen PNG con tu logotipo"
+			}
+		]
+	},
+	{
+		"name": "Promociones",
+		"icon": "promotions",
+		"settings":[
+			{
+				"type": "header",
+				"content": "Aviso de promociones"
+			},
+			{
+				"type": "checkbox",
+				"id": "aviso-promociones-check",
+				"label": "Activar aviso",
+				"default": true,
+				"info": "Activar para mostrar el aviso de promociones"
+			},
+			{
+				"type": "text",
+				"id": "aviso-promociones-text",
+				"label": "Texto aviso",
+				"info": "Escribe aquí el texto que tendra el aviso de promociones"
+			},
+			{
+				"type": "text",
+				"id": "aviso-promociones-time",
+				"label": "Duración del aviso",
+				"info": "Indica en cuantos días se volvera a mostrar el mensaje",
+				"default": "3"
+			}
+		]
+	},
+	{
+		"name": "Modal Email",
+		"icon": "promotions",
+		"settings":[
+			{
+				"type": "header",
+				"content": "Configuración del Modal Email"
+			},
+			{
+				"type": "checkbox",
+				"id": "modal-mail-check",
+				"label": "Activar Modal Email",
+				"default": true,
+				"info": "Activar para mostrar el Modal Email"
+			},
+			{
+				"type": "text",
+				"id": "modal-mail-titulo",
+				"label": "Asigna un título",
+				"info": "Escribe el título para el modal email"
+			},
+			{
+				"type": "text",
+				"id": "modal-mail-text",
+				"label": "Asigna una descripción",
+				"info": "Escribe la descripción para el modal email"
+			},
+			{
+				"type": "text",
+				"id": "modal-mail-placeholder",
+				"label": "Asigna un email de ejemplo",
+				"info": "Escribe un email de ejemplo para el modal email"
+			},
+			{
+				"type": "text",
+				"id": "modal-mail-boton",
+				"label": "Asigna el texto del botón",
+				"info": "Escribe el texto para el botón del modal email"
+			},
+			{
+				"type": "text",
+				"id": "modal-mail-time",
+				"label": "Duración del Modal Email",
+				"info": "Indica en cuantos días se volvera a mostrar el Modal Email",
+				"default": "3"
+			}
+		]
+	},
+	{
+		"name": "Home Slideshow",
+		"icon": "slide",
+		"settings":[
+			{
+				"type": "header",
+				"content": "Configura el primer slide"
+			},
+			{
+				"type": "checkbox",
+				"id": "homeslide-1-true",
+				"label": "Activar Slide",
+				"default": true,
+				"info": "Activar para mostrar el primer slide"
+			},
+			{
+				"type": "image",
+				"id": "homeslide-1-izq-img.png",
+				"label": "Imagen Izquierda",
+				"max-width":  720,
+				"max-height": 930,
+				"info": "Coloca la imagen de la parte izquierda"
+			},
+			{
+				"type": "text",
+				"id": "homeslide-1-izq-text",
+				"label": "Texto Izquierda",
+				"info": "Agrega el texto de la parte izquierda"
+			},
+			{
+				"type": "text",
+				"id": "homeslide-1-izq-prod",
+				"label": "URL Articulo Izquierda",
+				"info": "Agrega la URL del articulo de la parte izquierda"
+			},
+			{
+				"type": "image",
+				"id": "homeslide-1-der-img.png",
+				"label": "Imagen Derecha",
+				"max-width":  720,
+				"max-height": 930,
+				"info": "Coloca la imagen de la parte derecha"
+			},
+			{
+				"type": "text",
+				"id": "homeslide-1-der-text",
+				"label": "Texto Derecha",
+				"info": "Agrega el texto de la parte derecha"
+			},
+			{
+				"type": "product",
+				"id": "homeslide-1-der-prod",
+				"label": "Producto Derecha",
+				"info": "Agrega el producto de la parte derecha"
+			},
+			{
+				"type": "header",
+				"content": "Configura el segundo slide"
+			},
+			{
+				"type": "checkbox",
+				"id": "homeslide-2-true",
+				"label": "Activar Slide",
+				"default": true,
+				"info": "Activar para mostrar el segundo slide"
+			},
+			{
+				"type": "image",
+				"id": "homeslide-2-izq-img.png",
+				"label": "Imagen Izquierda",
+				"max-width":  720,
+				"max-height": 930,
+				"info": "Coloca la imagen de la parte izquierda"
+			},
+			{
+				"type": "text",
+				"id": "homeslide-2-izq-text",
+				"label": "Texto izquierda",
+				"info": "Agrega el texto de la parte izquierda"
+			},
+			{
+				"type": "text",
+				"id": "homeslide-2-izq-prod",
+				"label": "URL Articulo Izquierda",
+				"info": "Agrega la URL del articulo de la parte izquierda"
+			},
+			{
+				"type": "image",
+				"id": "homeslide-2-der-img.png",
+				"label": "Imagen Derecha",
+				"max-width":  720,
+				"max-height": 930,
+				"info": "Coloca la imagen de la parte derecha"
+			},
+			{
+				"type": "text",
+				"id": "homeslide-2-der-text",
+				"label": "Texto Derecha",
+				"info": "Agrega el texto de la parte derecha"
+			},
+			{
+				"type": "product",
+				"id": "homeslide-2-der-prod",
+				"label": "Producto Derecha",
+				"info": "Agrega el producto de la parte derecha"
+			},
+			{
+				"type": "header",
+				"content": "Configura el tercer slide"
+			},
+			{
+				"type": "checkbox",
+				"id": "homeslide-3-true",
+				"label": "Activar Slide",
+				"default": true,
+				"info": "Activar para mostrar el tercer slide"
+			},
+			{
+				"type": "image",
+				"id": "homeslide-3-izq-img.png",
+				"label": "Imagen Izquierda",
+				"max-width":  720,
+				"max-height": 930,
+				"info": "Coloca la imagen de la parte izquierda"
+			},
+			{
+				"type": "text",
+				"id": "homeslide-3-izq-text",
+				"label": "Texto izquierda",
+				"info": "Agrega el texto de la parte izquierda"
+			},
+			{
+				"type": "text",
+				"id": "homeslide-3-izq-prod",
+				"label": "URL Articulo Izquierda",
+				"info": "Agrega la URL del articulo de la parte izquierda"
+			},
+			{
+				"type": "image",
+				"id": "homeslide-3-der-img.png",
+				"label": "Imagen Derecha",
+				"max-width":  720,
+				"max-height": 930,
+				"info": "Coloca la imagen de la parte derecha"
+			},
+			{
+				"type": "text",
+				"id": "homeslide-3-der-text",
+				"label": "Texto Derecha",
+				"info": "Agrega el texto de la parte derecha"
+			},
+			{
+				"type": "product",
+				"id": "homeslide-3-der-prod",
+				"label": "Producto Derecha",
+				"info": "Agrega el producto de la parte derecha"
+			},
+			{
+				"type": "header",
+				"content": "Configura el cuarto slide"
+			},
+			{
+				"type": "checkbox",
+				"id": "homeslide-4-true",
+				"label": "Activar Slide",
+				"default": true,
+				"info": "Activar para mostrar el cuarto slide"
+			},
+			{
+				"type": "image",
+				"id": "homeslide-4-izq-img.png",
+				"label": "Imagen Izquierda",
+				"max-width":  720,
+				"max-height": 930,
+				"info": "Coloca la imagen de la parte izquierda"
+			},
+			{
+				"type": "text",
+				"id": "homeslide-4-izq-text",
+				"label": "Texto izquierda",
+				"info": "Agrega el texto de la parte izquierda"
+			},
+			{
+				"type": "text",
+				"id": "homeslide-4-izq-prod",
+				"label": "URL Articulo Izquierda",
+				"info": "Agrega la URL del articulo de la parte izquierda"
+			},
+			{
+				"type": "image",
+				"id": "homeslide-4-der-img.png",
+				"label": "Imagen Derecha",
+				"max-width":  720,
+				"max-height": 930,
+				"info": "Coloca la imagen de la parte derecha"
+			},
+			{
+				"type": "text",
+				"id": "homeslide-4-der-text",
+				"label": "Texto Derecha",
+				"info": "Agrega el texto de la parte derecha"
+			},
+			{
+				"type": "product",
+				"id": "homeslide-4-der-prod",
+				"label": "Producto Derecha",
+				"info": "Agrega el producto de la parte derecha"
+			},
+			{
+				"type": "header",
+				"content": "Configura el quinto slide"
+			},
+			{
+				"type": "checkbox",
+				"id": "homeslide-5-true",
+				"label": "Activar Slide",
+				"default": true,
+				"info": "Activar para mostrar el quinto slide"
+			},
+			{
+				"type": "image",
+				"id": "homeslide-5-izq-img.png",
+				"label": "Imagen Izquierda",
+				"max-width":  720,
+				"max-height": 930,
+				"info": "Coloca la imagen de la parte izquierda"
+			},
+			{
+				"type": "text",
+				"id": "homeslide-5-izq-text",
+				"label": "Texto Izquierda",
+				"info": "Agrega el texto de la parte izquierda"
+			},
+			{
+				"type": "text",
+				"id": "homeslide-5-izq-prod",
+				"label": "URL Articulo Izquierda",
+				"info": "Agrega la URL del articulo de la parte izquierda"
+			},
+			{
+				"type": "image",
+				"id": "homeslide-5-der-img.png",
+				"label": "Imagen Derecha",
+				"max-width":  720,
+				"max-height": 930,
+				"info": "Coloca la imagen de la parte derecha"
+			},
+			{
+				"type": "text",
+				"id": "homeslide-5-der-text",
+				"label": "Texto Derecha",
+				"info": "Agrega el texto de la parte derecha"
+			},
+			{
+				"type": "product",
+				"id": "homeslide-5-der-prod",
+				"label": "Producto Derecha",
+				"info": "Agrega el producto de la parte derecha"
+			},
+						{
+				"type": "header",
+				"content": "Configura el sexto slide"
+			},
+			{
+				"type": "checkbox",
+				"id": "homeslide-6-true",
+				"label": "Activar Slide",
+				"default": true,
+				"info": "Activar para mostrar el sexto slide"
+			},
+			{
+				"type": "image",
+				"id": "homeslide-6-izq-img.png",
+				"label": "Imagen Izquierda",
+				"max-width":  720,
+				"max-height": 930,
+				"info": "Coloca la imagen de la parte izquierda"
+			},
+			{
+				"type": "text",
+				"id": "homeslide-6-izq-text",
+				"label": "Texto Izquierda",
+				"info": "Agrega el texto de la parte izquierda"
+			},
+			{
+				"type": "text",
+				"id": "homeslide-6-izq-prod",
+				"label": "URL Articulo Izquierda",
+				"info": "Agrega la URL del articulo de la parte izquierda"
+			},
+			{
+				"type": "image",
+				"id": "homeslide-6-der-img.png",
+				"label": "Imagen Derecha",
+				"max-width":  720,
+				"max-height": 930,
+				"info": "Coloca la imagen de la parte derecha"
+			},
+			{
+				"type": "text",
+				"id": "homeslide-6-der-text",
+				"label": "Texto Derecha",
+				"info": "Agrega el texto de la parte derecha"
+			},
+			{
+				"type": "product",
+				"id": "homeslide-6-der-prod",
+				"label": "Producto Derecha",
+				"info": "Agrega el producto de la parte derecha"
+			}
+		]
+	},
+	{
+		"name": "Home Módulos",
+		"settings":[
+			{
+				"type": "header",
+				"content": "Módulo Izquierda"
+			},
+			{
+				"type": "image",
+				"id": "homeitem-izq-img.png",
+				"label": "Imagen Izquierda",
+				"max-width": 370,
+				"info": "Coloca la imagen del módulo de la izquierda (Ancho máximo: 370px)"
+			},
+			{
+				"type": "text",
+				"id": "homeitem-izq-tit",
+				"label": "Título Izquierda",
+				"placeholder":"Ej: Lookbook 2016",
+				"info": "Coloca el título del módulo de la izquierda"
+			},
+			{
+				"type": "text",
+				"id": "homeitem-izq-des",
+				"label": "Descripción Izquierda",
+				"placeholder":"Ej: Nuevos pañaleros",
+				"info": "Coloca la descripción del módulo de la izquierda"
+			},
+			{
+				"type": "page",
+				"id": "homeitem-izq-url",
+				"label": "Selecciona una página",
+				"info": "Selecciona la página correspondiente a este módulo"
+			},
+			{
+				"type": "header",
+				"content": "Módulo Central"
+			},
+			{
+				"type": "image",
+				"id": "homeitem-centro-img.png",
+				"label": "Imagen central",
+				"max-width": 370,
+				"info": "Coloca la imagen del módulo central (Ancho máximo: 370px)"
+			},
+			{
+				"type": "text",
+				"id": "homeitem-centro-tit",
+				"label": "Título central",
+				"placeholder":"Ej: Lookbook 2016",
+				"info": "Coloca el título del módulo central"
+			},
+			{
+				"type": "text",
+				"id": "homeitem-centro-des",
+				"label": "Descripción central",
+				"placeholder":"Ej: Nuevos pañaleros",
+				"info": "Coloca la descripción del módulo central"
+			},
+			{
+				"type": "page",
+				"id": "homeitem-centro-url",
+				"label": "Selecciona una página",
+				"info": "Selecciona la página correspondiente a este módulo"
+			},
+			{
+				"type": "header",
+				"content": "Módulo Derecha"
+			},
+			{
+				"type": "image",
+				"id": "homeitem-der-img.png",
+				"label": "Imagen derecha",
+				"max-width": 370,
+				"info": "Coloca la imagen del módulo de la derecha (Ancho máximo: 370px)"
+			},
+			{
+				"type": "text",
+				"id": "homeitem-der-tit",
+				"label": "Título derecha",
+				"placeholder":"Ej: Lookbook 2016",
+				"info": "Coloca el título del módulo de la derecha"
+			},
+			{
+				"type": "text",
+				"id": "homeitem-der-des",
+				"label": "Descripción derecha",
+				"placeholder":"Ej: Nuevos pañaleros",
+				"info": "Coloca la descripción del módulo de la derecha"
+			},
+			{
+				"type": "page",
+				"id": "homeitem-der-url",
+				"label": "Selecciona una página",
+				"info": "Selecciona la página correspondiente a este módulo"
+			}
+		]
+	},
+	{
+		"name": "Home Submenu",
+		"icon": "nav",
+		"settings":[
+			{
+				"type": "header",
+				"content": "Activar Submenu Stories"
+			},
+			{
+				"type": "checkbox",
+				"id": "homesubmenu-stories",
+				"label": "Activar submenu Stories",
+				"default": false,
+				"info": "Activar en caso de existir un submenu para Stories"
+			},
+			{
+				"type": "header",
+				"content": "Activar Submenu About"
+			},
+			{
+				"type": "checkbox",
+				"id": "homesubmenu-about",
+				"label": "Activar submenu About",
+				"default": false,
+				"info": "Activar en caso de existir un submenu para About"
+			}
+		]
+	},
+	{
+		"name": "Redes sociales",
+		"settings":[
+			{
+				"type": "header",
+				"content": "Configurar Facebook"
+			},
+			{
+				"type": "checkbox",
+				"id": "social-check-fb",
+				"label": "Activar Facebook",
+				"default": true
+			},
+			{
+				"type": "text",
+				"id": "social-url-fb",
+				"label": "URL de Facebook",
+				"info": "Coloca la URL de tu cuenta de Facebook"
+			},
+			{
+				"type": "header",
+				"content": "Configurar Twitter"
+			},
+			{
+				"type": "checkbox",
+				"id": "social-check-tw",
+				"label": "Activar Twitter",
+				"default": true
+			},
+			{
+				"type": "text",
+				"id": "social-url-tw",
+				"label": "URL de Twitter",
+				"info": "Coloca la URL de tu cuenta de Twitter"
+			},
+			{
+				"type": "header",
+				"content": "Configurar Pinterest"
+			},
+			{
+				"type": "checkbox",
+				"id": "social-check-pt",
+				"label": "Activar Pinterest",
+				"default": true
+			},
+			{
+				"type": "text",
+				"id": "social-url-pt",
+				"label": "URL de Pinterest",
+				"info": "Coloca la URL de tu cuenta de Pinterest"
+			},
+			{
+				"type": "header",
+				"content": "Configurar YouTube"
+			},
+			{
+				"type": "checkbox",
+				"id": "social-check-yt",
+				"label": "Activar YouTube",
+				"default": true
+			},
+			{
+				"type": "text",
+				"id": "social-url-yt",
+				"label": "URL de YouTube",
+				"info": "Coloca la URL de tu cuenta de YouTube"
+			},
+			{
+				"type": "header",
+				"content": "Configurar Instagram"
+			},
+			{
+				"type": "checkbox",
+				"id": "social-check-in",
+				"label": "Activar Instagram",
+				"default": true
+			},
+			{
+				"type": "text",
+				"id": "social-url-in",
+				"label": "URL de Instagram",
+				"info": "Coloca la URL de tu cuenta de Instagram"
+			}
+		]
+	}
 ]
