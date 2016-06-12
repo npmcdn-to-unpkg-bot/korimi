@@ -1,4 +1,3 @@
-<<<<<<< Updated upstream
 {% comment %}templates/blog.liquid{% endcomment %}
 
 {% if blog.handle contains 'stories' %}
@@ -61,68 +60,4 @@
 
 	</div>
 
-=======
-{% comment %}templates/blog.liquid{% endcomment %}
-
-{% if blog.handle contains 'stories' %}
-
-	<div class="contenedor-general">
-
-		<div class="contenedor">
-
-			<div class="blog-grid">
-
-				{% for article in blog.articles %}
-
-					<div class="blog-item">
-
-						<a href="{{ article.url }}"><img src="{{ article | img_url: 'large' }}" alt=""></a>
-
-						<div class="fecha">{{ article.published_at | date: "%B %Y" }}</div>
-
-						<h2>{{ article.title }}</h2>
-
-						<div class="credito">escrito por: {{ article.author }}</div>
-
-						<div class="leer-mas"><a href="{{ article.url }}">Leer más</a></div>
-
-					</div>				
-
-				{% endfor %}
-
-			</div>
-
-		</div>
-
-	</div>
-
-{% elsif blog.handle contains 'universe-korimi' %}
-
-	<div class="contenedor-general">
-
-		<div class="contenedor">
-
-			<h1>{{ blog.title }}</h1>
-
-			<div class="blog-grid">
-
-				{% for article in blog.articles %}
-
-					<div class="blog-item">
-
-						<a href="{{ article.url }}"><img src="{{ article | img_url: 'large' }}" alt=""></a>
-
-						<h3>{{ article.title }}</h3>
-
-					</div>
-
-				{% endfor %}
-
-			</div>
-
-		</div>
-
-	</div>
-
->>>>>>> Stashed changes
 {% endif %}

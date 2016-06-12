@@ -1,4 +1,3 @@
-<<<<<<< Updated upstream
 {% unless template == 'index' %}
 
 	<div class="colecciones-bread">
@@ -57,64 +56,4 @@
 
 	</div>
 
-=======
-{% unless template == 'index' %}
-
-	<div class="colecciones-bread">
-
-		<a href="/">Start</a>
-
-		<span class="bread-division">—</span>
-
-		<a href="/collections/">Shop</a>
-
-		{% if template contains 'product' %}
-
-			{% if collection %}
-
-				<span class="bread-division">—</span>
-
-				{% if collection.handle %}
-
-					{% capture url %}/collections/{{ collection.handle }}{% endcapture %}
-
-					{{ collection.title | link_to: url }}
-
-				{% endif %}
-
-			{% endif %}
-
-			<span class="bread-division">—</span>
-
-			<span>{{ product.title }}</span>
-
-		{% elsif template contains 'collection' and collection.handle %}
-
-				{% if current_tags %}
-
-					<span class="bread-division">—</span>
-
-					{% capture url %}/collections/{{ collection.handle }}{% endcapture %}
-
-					{{ collection.title | link_to: url }}
-
-				{% else %}
-
-					<span class="bread-division">—</span>
-
-					<span>{{ collection.title | capitalize }}</span>
-
-				{% endif %}
-
-		{% else %}
-
-			<span class="bread-division">—</span>
-
-			<span>{{ page_title }}</span>
-
-		{% endif %}
-
-	</div>
-
->>>>>>> Stashed changes
 {% endunless %}
