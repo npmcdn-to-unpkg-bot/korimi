@@ -32,12 +32,6 @@
 
 		{% endif %}
 
-		<link href='https://fonts.googleapis.com/css?family=Muli:400,300,300italic,400italic' rel='stylesheet' type='text/css'>
-
-		<link href='https://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
-
-		<link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
-
 		{% include 'head-css' %}
 
 		{% include 'head-js' %}
@@ -60,17 +54,9 @@
 
 		{% include 'ice9-modal-mail' %}
 
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-
-		<script src="{{ 'ice9-javascript-javaScript-cookie.js' | asset_url }}"></script>
-
-		<script src="{{ 'ice9-javascript-jQueryCycle-2.js' | asset_url }}"></script>
-
-		<script src="{{ 'ice9-javascript-instafeed.js' | asset_url }}"></script>
-
-		<script src="https://npmcdn.com/masonry-layout@4.0/dist/masonry.pkgd.min.js"></script>
-
 		<script src="{{ 'app.js' | asset_url }}"></script>
+
+		{% include 'ice9-currency' %}
 		
 	</body>
 	
