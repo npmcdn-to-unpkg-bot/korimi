@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 {% include 'ice9-aviso-descuento' %}
 
 <div class="contenedor-general">
@@ -232,4 +233,240 @@
 
 	</div>
 
+=======
+{% include 'ice9-aviso-descuento' %}
+
+<div class="contenedor-general">
+
+	<div class="contenedor">
+
+		<header>
+
+			<div class="header-columna hidden-xs"></div>
+
+			<div class="header-logo"><a href="/"><img src="{{ 'korimi-logo.png' | asset_url }}"></a></div>
+
+			<div class="header-columna">
+
+				<div class="columna-carrito">
+
+					<a href="/cart/">
+
+						<div class="carrito-text">Carrito</div>
+
+						<div class="carrito-img">
+
+							<img src="{{ 'ice9-image-bag-icon-light.svg' | asset_url }}" alt="">
+
+							{% if cart.item_count != 0 %}
+
+								<span>{{ cart.item_count }}</span>
+
+							{% else %}
+
+								<span>0</span>
+
+							{% endif %}
+
+						</div>
+
+					</a>
+
+				</div>
+
+				<div class="columna-cerrar">
+
+					<img src="{{ 'ice9-image-menu-icon-light.svg' | asset_url}}" alt="">
+
+				</div>
+
+			</div>
+
+			<div class="menu">
+
+				<div class="menu-contenedor">
+
+					<div class="menu-columnas">
+
+						<ul>
+
+							{% if customer %}
+
+								<li><a href="#">Mi cuenta</a><a href="">Tus órdenes</a></li>
+
+								<li><a href="#">Hola {{ customer.first_name }}</a></li>
+
+								<li><a href="#">Salir</a></li>
+
+							{% else %}
+
+									<li><a href="">Registrate</a>
+
+							{% endif %}
+
+						</ul>
+
+					</div>
+
+					<div class="menu-columnas idiomas">
+
+						<ul>
+
+							<li><a class="active" href="#">Español</a></li>
+
+							<li>—</li>
+
+							<li><a href="#">Inglés</a></li>
+
+						</ul>
+
+						<ul>
+
+							<li><a class="active" href="#">MXN</a></li>
+
+							<li>—</li>
+
+							<li><a href="#">USD</a></li>
+
+							<li>—</li>
+
+							<li><a href="#">EUR</a></li>
+
+						</ul>
+
+					</div>
+
+					<div class="menu-columnas"><a href="/checkout">Proceder al pago</a></div>
+
+				</div>
+
+			</div>
+
+			<div class="header-submenu">
+
+				<nav>
+
+					<ul>
+
+						{% for link in linklists.main-menu.links %}
+
+							<li id="boton-{{ link.handle }}"><a href="{{ link.url }}" data-id="{{ link.handle }}">{{ link.title }}</a></li>							
+
+						{% endfor %}
+
+					</ul>
+
+				</nav>
+
+			</div>
+
+			<div class="submenu" data-id="boton-shop">
+
+				<ul class="hidden-xs"></ul>
+
+				<div class="submenu-mascara">
+
+					<ul class="submenu-columna-izq">
+
+						<div class="columna-links">
+
+							<li>{{ linklists.home.title }}</li>
+
+							{% for link in linklists.home.links %}
+
+								<li><a href="{{ link.url }}">{{ link.title }}</a></li>
+
+							{% endfor %}
+
+						</div>
+
+					</ul>
+
+					<ul class="submenu-columna-der">
+
+						<div class="columna-links">
+
+							<li>{{ linklists.fashion.title }}</li>
+
+							{% for link in linklists.fashion.links %}
+
+								<li><a href="{{ link.url }}">{{ link.title }}</a></li>
+
+							{% endfor %}
+
+						</div>
+
+					</ul>
+
+				</div>
+
+				<ul class="hidden-xs"></ul>
+
+			</div>
+
+			{% if settings.homesubmenu-stories %}
+
+				<div class="submenu submenu-extra" data-id="boton-stories">
+
+					<ul class="hidden-xs"></ul>
+
+					<div class="submenu-mascara">
+
+						<ul class="submenu-columna-izq">
+
+							<div class="columna-links">
+
+								{% for link in linklists.stories.links %}
+
+									<li><a href="{{ link.url }}">{{ link.title }}</a></li>
+
+								{% endfor %}
+
+							</div>
+
+						</ul>
+
+					</div>
+
+					<ul class="hidden-xs"></ul>
+
+				</div>
+
+			{% endif %}
+
+			{% if settings.homesubmenu-about %}
+
+				<div class="submenu submenu-extra" data-id="boton-about">
+
+					<ul class="hidden-xs"></ul>
+
+					<div class="submenu-mascara">
+
+						<ul class="submenu-columna-izq">
+
+							<div class="columna-links">
+
+								{% for link in linklists.about.links %}
+
+									<li><a href="{{ link.url }}">{{ link.title }}</a></li>
+
+								{% endfor %}
+
+							</div>
+
+						</ul>
+
+					</div>
+
+					<ul class="hidden-xs"></ul>
+
+				</div>
+
+			{% endif %}
+
+		</header>
+
+	</div>
+
+>>>>>>> Stashed changes
 </div>

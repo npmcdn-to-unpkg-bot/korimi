@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 {% comment %}templates/cart.liquid{% endcomment %}
 
 
@@ -97,4 +98,105 @@
 
 	</div>
 
+=======
+{% comment %}templates/cart.liquid{% endcomment %}
+
+
+<!-- Contenedor general  -->
+
+<div class="contenedor-general">
+
+	<div class="contenedor">
+
+		<h1>Carrito</h1>
+
+		<form action="/cart" method="post" novalidate>
+
+			<div class="contenedor-carrito">
+
+				{% if cart.item_count > 0 %}
+
+					{% for item in cart.items %}
+
+						<div class="carrito-fila">
+
+							<div class="carrito-img"><a href="{{ item.url }}"><img src="{{ item | img_url: 'medium' }}" alt=""></a></div>							
+
+							<div class="carrito-info">
+
+								<div class="contenedor-info">
+
+									<div class="info-titulo">
+
+										<h2>{{ item.product.title }}</h2>
+
+										<span>{{ item.variant.title }}</span>
+
+									</div>
+
+									<div class="info-plus" id="plus-1">
+
+										<span>-</span><input type="number" name="number" id="{{ item.id }}" min="1" value="{{ item.quantity }}"><span>+</span>
+
+									</div>
+
+								</div>
+
+							</div>
+
+							<div class="carrito-costo">
+
+								<p>{{ item.price | money }} MXN</p>
+
+							</div>
+
+							{% comment %}<a href="/cart/change/{{ item.variant.id }}?quantity=0" >Remove Item</a>{% endcomment %}
+
+						</div>
+
+					{% endfor %}
+
+				{% else %}
+
+					<p>Aún no hay nada en tu carrito, te invitamos a pasar a nuestro <a href="/collections/">Shop</a></p>
+
+				{% endif %}
+
+			</div>
+
+			<div class="contenedor-total">
+
+				<div class="total-text">Total</div>
+
+				<div class="total-cantidad">{{ cart.total_price | money }} MXN</div>
+
+				<div class="total-moneda">
+
+					<label for="">Currency:</label>
+
+					<select name="" id="">
+
+						<option value="MXN" selected="">MXN</option>
+
+						<option value="USD">USD</option>
+
+						<option value="EUR">EUR</option>
+						
+					</select>
+
+				</div>
+				
+			</div>
+
+			<div class="cart-boton">
+
+				<input type="submit" name="checkout" value="Proceder al pago">
+				
+			</div>
+
+		</form>
+
+	</div>
+
+>>>>>>> Stashed changes
 </div>

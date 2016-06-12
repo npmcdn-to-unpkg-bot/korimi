@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 <!DOCTYPE html>
 
 <html>
@@ -74,4 +75,82 @@
 		
 	</body>
 	
+=======
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+
+		{% if template == 'index' %}
+
+			<title>{{ shop.name }}</title>
+
+		{% elsif template == '404' %}
+
+			<title>Página no encontrada | {{ shop.name }}</title>
+
+		{% elsif template == 'collection' %}
+
+			<title>{{ page_title }}{% if current_tags %} &ndash; {{ current_tags | join: ', ' }}{% endif %}{% if current_page != 1 %} &ndash; Page {{ current_page }}{% endif %}{% unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless %} </title>
+
+		{% else %}
+
+			<title>{{ page_title }} | {{ shop.name }}</title>
+
+		{% endif %} 
+
+		<meta charset="utf-8">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+
+		{% if page_description != '' %}
+
+			<meta name="description" content="{{ page_description }}" />
+
+		{% endif %}
+
+		<link href='https://fonts.googleapis.com/css?family=Muli:400,300,300italic,400italic' rel='stylesheet' type='text/css'>
+
+		<link href='https://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+
+		<link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
+
+		{% include 'head-css' %}
+
+		{% include 'head-js' %}
+		
+		{{ content_for_header }}
+
+	</head>
+
+	<body class="{{ template | replace: '.', ' ' | truncatewords: 1, '' }}" id="{{ page_title | handle }}">
+
+		{% include 'ice9-header' %}
+
+		{{ content_for_layout }}
+
+		{% unless page_title contains 'Lookbook' %}
+
+			{% include 'ice9-footer' %}
+
+		{% endunless %}
+
+		{% include 'ice9-modal-mail' %}
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+		<script src="{{ 'ice9-javascript-javaScript-cookie.js' | asset_url }}"></script>
+
+		<script src="{{ 'ice9-javascript-jQueryCycle-2.js' | asset_url }}"></script>
+
+		<script src="{{ 'ice9-javascript-instafeed.js' | asset_url }}"></script>
+
+		<script src="https://npmcdn.com/masonry-layout@4.0/dist/masonry.pkgd.min.js"></script>
+
+		<script src="{{ 'app.js' | asset_url }}"></script>
+		
+	</body>
+	
+>>>>>>> Stashed changes
 </html>

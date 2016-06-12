@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 {% comment %}templates/product.liquid{% endcomment %}
 
 {% include 'ice9-modal-product' %}
@@ -158,4 +159,166 @@
 
 	</div>
 
+=======
+{% comment %}templates/product.liquid{% endcomment %}
+
+{% include 'ice9-modal-product' %}
+
+<!-- Contenedor general  -->
+
+<div class="contenedor-general">
+
+	<div class="contenedor">
+
+		{% include 'ice9-breadcrumbs' %}
+
+		<div class="producto-sencillo">
+
+			<div class="producto-sencillo-imgs">
+
+				<div class="producto-hero-img">
+
+					<img src="{{ product.featured_image | product_img_url: 'grande' }}" alt="">
+					
+				</div>
+
+				<div class="producto-img">
+
+					{% for image in product.images %}
+
+						{% unless product.featured_image == image.src %}
+
+							<span><img src="{{ image | img_url: 'medium' }}" alt=""></span>
+
+						{% endunless %}
+
+					{% endfor %}
+					
+				</div>
+				
+			</div>
+
+			<div class="producto-sencillo-text">
+
+				<h1>{{ product.title }}</h1>
+
+				{% for variant in product.variants %}
+
+					{% if forloop.first == true %}
+
+						<h2>{{variant.option1}}</h2>
+
+					{% endif %}
+
+				{% endfor %}
+
+				{{ product.description }}
+				
+				<form action="/cart/add" method="post">
+
+					<div class="precio">{{ product.price | money }}</div>
+
+					{% if product.variants.size > 1 %}
+
+						<select name="id" id="product-select">
+
+							{% for variant in product.variants %}
+
+								{% if variant.available %}
+
+									{% if forloop.first == true %}
+
+										<option value="{{ variant.id }}" selected="">{{ variant.option2 }}</option>
+
+									{% else %}
+
+										<option value="{{ variant.id }}">{{ variant.option2 }}</option>
+
+									{% endif %}
+
+								{% endif %}
+
+							{% endfor %}
+
+						</select>
+
+					{% else %}
+
+						<input type="hidden" name="id" value="{{ product.variants.first.id }}">
+
+					{% endif %}
+
+					<input type="submit" value="Comprar">
+					
+				</form>
+
+				<div class="text-extra">
+
+					<a href="">Envíos</a>
+
+					<a href="">Cuidados</a>
+
+					<a href="">Garantías</a>
+
+				</div>	
+		
+			</div>
+			
+		</div>
+
+		<div class="producto-mapa" style="background: url({{ 'map.png' | asset_url }}) no-repeat center center; -webkit-background-size: cover; background-size: cover;">
+
+			<div class="mapa-text">
+
+				<h4>Time to create</h4>
+
+				<p>4 days</p>
+
+			</div>
+
+			<div class="mapa-text">
+
+				<h4>Community</h4>
+
+				<p>Chenalhó</p>
+
+			</div>
+
+			<div class="mapa-text">
+
+				<h4>State of Mexico</h4>
+
+				<p>Chiapas</p>
+
+			</div>
+
+			<div class="mapa-boton">
+
+				<a href="">Read more about our process</a>
+
+			</div>
+			
+		</div>
+
+		{% capture titulo_coleccion %}{{ collection.title }}{% endcapture %}
+
+		{% if titulo_coleccion != '' %}
+
+			<div class="colecciones-grid">
+
+				<h4>Más de {{ titulo_coleccion }}</h4>
+
+				{% for product in collection.products limit:3 %}
+
+					{% include 'ice9-producto-ciclo' with collection.handle %}
+
+				{% endfor %}
+
+			</div>
+			
+		{% endif %}
+
+	</div>
+
+>>>>>>> Stashed changes
 </div>

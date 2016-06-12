@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Generator: Adobe Illustrator 19.1.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -8,3 +9,15 @@
 <path class="st0" d="M80.4,40.1C77.6,26.3,69.1,0,45,0S12.4,26.3,9.6,40.1H0V120h90V40.1H80.4z M45,8.3C62.1,8.3,69.2,28,71.9,40
 	H18.1C20.8,28,27.8,8.3,45,8.3z M81.7,111.7H8.3V48.4h73.4V111.7z"/>
 </svg>
+=======
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 19.1.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 90 120" style="enable-background:new 0 0 90 120;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#030405;}
+</style>
+<path class="st0" d="M80.4,40.1C77.6,26.3,69.1,0,45,0S12.4,26.3,9.6,40.1H0V120h90V40.1H80.4z M45,8.3C62.1,8.3,69.2,28,71.9,40
+	H18.1C20.8,28,27.8,8.3,45,8.3z M81.7,111.7H8.3V48.4h73.4V111.7z"/>
+</svg>
+>>>>>>> Stashed changes
